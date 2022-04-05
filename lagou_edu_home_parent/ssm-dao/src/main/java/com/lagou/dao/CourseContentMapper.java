@@ -1,0 +1,46 @@
+package com.lagou.dao;
+
+import com.lagou.domain.Course;
+import com.lagou.domain.CourseSection;
+
+import java.util.List;
+
+/**
+ * @author 流年安好
+ */
+public interface CourseContentMapper {
+    /**
+     * 根据课程id查询关联的章节信息及章节信息关联的课时信息
+     *
+     * @param courseId
+     * @return
+     */
+    public List<CourseSection> findSectionAndLessonByCourseId(Integer courseId);
+
+    /**
+     *  回显章节对应的课程信息
+     * @param courseId
+     * @return
+     */
+    public Course findCourseByCourseId(int courseId);
+
+    /**
+     * 新增章节信息
+     * @param courseSection
+     */
+    public void saveSection(CourseSection courseSection);
+
+
+    /**
+     * 更新章节信息
+     * @param courseSection
+     */
+    void updateSection(CourseSection courseSection);
+
+    /**
+     *         修改章节状态
+     * @param courseSection
+     */
+    public void updateSectionStatus(CourseSection courseSection);
+
+}
